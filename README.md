@@ -58,8 +58,8 @@ This project is a web application that performs real-time emotion recognition us
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <repository-directory>
+    git clone "https://github.com/aditya13504/Emotion-Recognition-System.git"
+    cd https://github.com/aditya13504/Emotion-Recognition-System.git
     ```
 
 2.  **Create and activate a virtual environment (recommended):**

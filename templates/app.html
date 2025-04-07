@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Recognition - Ready?</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <div class="container">
+        <h1>Hi, {{ username }}!</h1>
+        <h2>Ready to see your emotions?</h2>
+        <form action="/live" method="get">
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+
+    <!-- Add script for fade-out transition -->
+    <script>
+        document.querySelector('form button[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default immediate navigation
+            const targetUrl = this.closest('form').action;
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = targetUrl; // Navigate after fade-out
+            }, 400); // Match CSS transition duration
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='js/background.js') }}"></script>
+</body>
+</html> 

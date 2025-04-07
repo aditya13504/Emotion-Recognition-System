@@ -1,0 +1,5 @@
+Flask
+Flask-SocketIO
+deepface
+opencv-python-headless
+eventlet # Or gevent, needed for Flask-SocketIO 
